@@ -35,6 +35,7 @@ public class BattleScene {
         int hit = attacker.attack();
         //Отнимаем количество урона из здоровья защищающегося
         int defenderHealth = defender.getHealthPoints() - hit;
+        if (defenderHealth < 0) defenderHealth = 0;
         //Если атака прошла, выводим в консоль сообщение об этом
         if (hit != 0) {
             System.out.println(String.format("%s Нанес удар в %d единиц!", attacker.getName(), hit));
@@ -63,4 +64,5 @@ public class BattleScene {
             return false;
         }
     }
+
 }
